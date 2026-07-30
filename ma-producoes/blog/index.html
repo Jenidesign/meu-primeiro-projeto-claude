@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — M.A Produções | Comédia, humor e mercado de entretenimento</title>
+<meta name="description" content="Artigos da M.A Produções sobre stand-up comedy, marketing de humor e o mercado de entretenimento ao vivo no Brasil.">
+<link rel="canonical" href="https://www.maproducoes.com.br/blog/">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0B0B0D">
+<meta name="author" content="M.A Produções">
+
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="../assets/favicon-48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="M.A Produções">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Blog — M.A Produções">
+<meta property="og:description" content="Artigos sobre stand-up comedy, marketing de humor e o mercado de entretenimento ao vivo no Brasil.">
+<meta property="og:url" content="https://www.maproducoes.com.br/blog/">
+<meta property="og:image" content="https://www.maproducoes.com.br/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog — M.A Produções">
+<meta name="twitter:image" content="https://www.maproducoes.com.br/assets/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Blog M.A Produções",
+  "url": "https://www.maproducoes.com.br/blog/",
+  "publisher": { "@type": "Organization", "name": "M.A Produções" }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,600;0,9..144,900;1,9..144,300;1,9..144,600&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#0B0B0D; --bg-elevated:#131316; --surface:#1B1B1F;
+    --text:#F5F3EF; --muted:#8C8C90; --accent:#E8232B;
+    --hairline:rgba(245,243,239,.12);
+    --font-display:'Fraunces', Georgia, serif; --font-body:'Newsreader', Georgia, serif;
+    --ease:cubic-bezier(0.22,1,0.36,1);
+  }
+  *,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{ background:var(--bg); font-family:var(--font-body); color:var(--text); line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  img{ max-width:100%; display:block; background:linear-gradient(135deg,var(--surface) 0%, var(--bg-elevated) 100%); }
+  a{ color:inherit; text-decoration:none; }
+  ::selection{ background:var(--accent); color:var(--bg); }
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; }
+  @media (prefers-reduced-motion: reduce){ *{ scroll-behavior:auto !important; } }
+
+  .container{ max-width:1000px; margin-inline:auto; padding-inline:24px; }
+  @media (min-width:768px){ .container{ padding-inline:40px; } }
+
+  .kicker{ display:inline-flex; align-items:center; gap:10px; font-size:.72rem; font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); margin-bottom:20px; }
+  .kicker::before{ content:''; width:22px; height:1px; background:var(--accent); }
+  h1,h2,h3{ font-family:var(--font-display); font-weight:900; letter-spacing:-0.01em; }
+  p{ color:var(--muted); font-size:clamp(1rem, 1.4vw, 1.125rem); }
+
+  header.nav{ position:sticky; top:0; left:0; right:0; z-index:1000; height:84px; display:flex; align-items:center; background:rgba(11,11,13,.85); backdrop-filter:blur(14px); border-bottom:1px solid var(--hairline); }
+  .nav-inner{ width:100%; display:flex; align-items:center; justify-content:space-between; }
+  .brand img{ height:30px; width:auto; background:none; }
+  nav.links{ display:none; align-items:center; gap:40px; }
+  nav.links a{ font-size:.86rem; text-transform:uppercase; letter-spacing:.08em; position:relative; padding-bottom:4px; }
+  nav.links a::after{ content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--accent); transition:width .4s var(--ease); }
+  nav.links a:hover::after{ width:100%; }
+  @media (min-width:1024px){ nav.links{ display:flex; } }
+  .btn{ display:inline-flex; align-items:center; gap:10px; font-size:.82rem; text-transform:uppercase; letter-spacing:.08em; padding:12px 26px; border:1px solid var(--accent); color:var(--accent); transition:background .35s var(--ease), color .35s var(--ease); white-space:nowrap; }
+  .btn:hover{ background:var(--accent); color:var(--bg); }
+  .nav-cta{ display:none; } @media (min-width:1024px){ .nav-cta{ display:inline-flex; } }
+
+  .blog-hero{ padding-block:80px 40px; border-bottom:1px solid var(--hairline); }
+  @media (min-width:768px){ .blog-hero{ padding-block:120px 60px; } }
+  .blog-hero h1{ font-size:clamp(2.2rem, 5vw, 3.6rem); max-width:16ch; margin-bottom:20px; }
+  .blog-hero p{ font-size:clamp(1.05rem,1.6vw,1.3rem); max-width:56ch; }
+
+  .post-list{ padding-block:60px 100px; display:flex; flex-direction:column; }
+  .post-card{ display:grid; grid-template-columns:1fr; gap:20px; padding-block:40px; border-bottom:1px solid var(--hairline); transition:opacity .3s var(--ease); }
+  @media (min-width:700px){ .post-card{ grid-template-columns:220px 1fr; gap:40px; } }
+  .post-card:hover{ opacity:.85; }
+  .post-thumb{ aspect-ratio:4/3; overflow:hidden; background:var(--surface); }
+  .post-thumb img{ width:100%; height:100%; object-fit:cover; filter:grayscale(1) contrast(1.05); }
+  .post-card:hover .post-thumb img{ filter:grayscale(0) contrast(1.05); }
+  .post-meta{ font-size:.75rem; text-transform:uppercase; letter-spacing:.1em; color:var(--accent); margin-bottom:10px; }
+  .post-card h2{ font-size:clamp(1.3rem,2.4vw,1.9rem); margin-bottom:12px; max-width:22ch; }
+  .post-card p{ font-size:1rem; max-width:60ch; }
+  .read-more{ display:inline-block; margin-top:14px; font-size:.85rem; text-transform:uppercase; letter-spacing:.08em; color:var(--text); border-bottom:1px solid var(--hairline); }
+  .post-card:hover .read-more{ color:var(--accent); border-color:var(--accent); }
+
+  footer{ background:var(--bg-elevated); border-top:1px solid var(--hairline); }
+  .footer-bottom{ display:flex; flex-direction:column; gap:12px; padding-block:28px; font-size:.78rem; color:var(--muted); }
+  @media (min-width:768px){ .footer-bottom{ flex-direction:row; justify-content:space-between; } }
+  .footer-inner{ padding-block:40px; display:flex; flex-direction:column; gap:16px; }
+  .footer-inner a{ color:var(--muted); transition:color .3s var(--ease); }
+  .footer-inner a:hover{ color:var(--accent); }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="../index.html" class="brand"><img src="../assets/logo-branco.png" alt="M.A Produções"></a>
+    <nav class="links">
+      <a href="../index.html#quem-somos">Quem somos</a>
+      <a href="../index.html#elenco">Elenco</a>
+      <a href="index.html">Blog</a>
+      <a href="../index.html#contato">Contato</a>
+    </nav>
+    <a href="mailto:comercial@maprod.com.br" class="btn nav-cta">Fale com a gente</a>
+  </div>
+</header>
+
+<main>
+  <section class="blog-hero">
+    <div class="container">
+      <span class="kicker">Blog</span>
+      <h1>Humor, dados e o mercado do entretenimento ao vivo.</h1>
+      <p>Análises e bastidores sobre o mercado de stand-up comedy no Brasil, direto de quem produz, agencia e vive esse ecossistema todos os dias.</p>
+    </div>
+  </section>
+
+  <section class="post-list">
+    <div class="container">
+
+      <a href="por-que-marcas-investem-em-humor.html" class="post-card">
+        <div class="post-thumb"><img src="../assets/artistas/matheus-ceara.png" alt="Comediante em apresentação de stand-up comedy"></div>
+        <div>
+          <span class="post-meta">Marketing de humor</span>
+          <h2>Por que marcas estão investindo em comédia e stand-up no Brasil</h2>
+          <p>O humor virou uma das apostas mais eficientes do marketing brasileiro. Entenda os números por trás dessa mudança e como marcas estão se conectando com o público através da comédia.</p>
+          <span class="read-more">Ler artigo →</span>
+        </div>
+      </a>
+
+      <a href="como-o-stand-up-cresceu-no-brasil.html" class="post-card">
+        <div class="post-thumb"><img src="../assets/artistas/4-amigos.jpg" alt="Grupo de comediantes em turnê de stand-up comedy"></div>
+        <div>
+          <span class="post-meta">Mercado &amp; cultura</span>
+          <h2>Como o stand-up comedy virou o maior fenômeno do entretenimento ao vivo no Brasil</h2>
+          <p>Da democratização dos teatros aos recordes de bilheteria: a trajetória de um gênero que redesenhou o entretenimento ao vivo no país.</p>
+          <span class="read-more">Ler artigo →</span>
+        </div>
+      </a>
+
+      <a href="como-contratar-comediante-evento-corporativo.html" class="post-card">
+        <div class="post-thumb"><img src="../assets/artistas/marcelo-marrom.jpg" alt="Comediante se apresentando em evento corporativo"></div>
+        <div>
+          <span class="post-meta">Guia prático</span>
+          <h2>Como contratar um comediante para eventos corporativos</h2>
+          <p>Um guia direto para empresas que querem levar humor para convenções, confraternizações e eventos internos — do briefing à escolha do artista certo.</p>
+          <span class="read-more">Ler artigo →</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <a href="../index.html">← Voltar para a M.A Produções</a>
+  </div>
+  <div class="container footer-bottom">
+    <span>M.A Produções © 2026 — Todos os direitos reservados.</span>
+    <span>Desenvolvido pela V4 Company Alves &amp; Co.</span>
+  </div>
+</footer>
+
+</body>
+</html>

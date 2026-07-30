@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M.A Produções — O maior ecossistema de comédia do Brasil</title>
+<meta name="description" content="A M.A Produções é a maior produtora e agência de talentos do stand-up comedy no Brasil — conheça o elenco, o alcance e o impacto cultural da empresa.">
+<link rel="canonical" href="https://www.maproducoes.com.br/">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0B0B0D">
+<meta name="author" content="M.A Produções">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
+<link rel="manifest" href="site.webmanifest">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="M.A Produções">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="M.A Produções — O maior ecossistema de comédia do Brasil">
+<meta property="og:description" content="A M.A Produções é a maior produtora e agência de talentos do stand-up comedy no Brasil — conheça o elenco, o alcance e o impacto cultural da empresa.">
+<meta property="og:url" content="https://www.maproducoes.com.br/">
+<meta property="og:image" content="https://www.maproducoes.com.br/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="M.A Produções — o maior ecossistema de comédia do Brasil">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="M.A Produções — O maior ecossistema de comédia do Brasil">
+<meta name="twitter:description" content="A maior produtora e agência de talentos do stand-up comedy no Brasil.">
+<meta name="twitter:image" content="https://www.maproducoes.com.br/assets/og-image.png">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "M.A Produções",
+  "url": "https://www.maproducoes.com.br/",
+  "logo": "https://www.maproducoes.com.br/assets/logo-mark.png",
+  "description": "A maior produtora e agência de talentos do stand-up comedy no Brasil.",
+  "email": "comercial@maprod.com.br",
+  "telephone": "+5511945512381",
+  "sameAs": ["https://www.instagram.com/m.aprod"],
+  "areaServed": "BR"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,600;0,9..144,900;1,9..144,300;1,9..144,600&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css">
+<script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
+<script src="https://unpkg.com/split-type"></script>
+
+<style>
+  :root{
+    --bg:#0B0B0D;
+    --bg-elevated:#131316;
+    --surface:#1B1B1F;
+    --text:#F5F3EF;
+    --muted:#8C8C90;
+    --accent:#E8232B;
+    --accent-soft:rgba(232,35,43,.14);
+    --hairline:rgba(245,243,239,.12);
+    --font-display:'Fraunces', Georgia, serif;
+    --font-body:'Newsreader', Georgia, serif;
+    --ease:cubic-bezier(0.22,1,0.36,1);
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  html,body{ background:var(--bg); }
+  body{
+    font-family:var(--font-body);
+    color:var(--text);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    position:relative;
+  }
+  html.menu-open, html.menu-open body{ overflow:hidden; height:100%; }
+
+  img{ max-width:100%; display:block; background:linear-gradient(135deg,var(--surface) 0%, var(--bg-elevated) 100%); }
+
+  a{ color:inherit; text-decoration:none; }
+
+  ::selection{ background:var(--accent); color:var(--bg); }
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--accent); outline-offset:3px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important; }
+  }
+
+  /* film grain */
+  body::before{
+    content:'';
+    position:fixed; inset:0;
+    z-index:9999;
+    pointer-events:none;
+    opacity:.035;
+    mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .container{ max-width:1280px; margin-inline:auto; padding-inline:24px; }
+  @media (min-width:768px){ .container{ padding-inline:40px; } }
+  @media (min-width:1024px){ .container{ padding-inline:56px; } }
+
+  section{ padding-block:60px; position:relative; }
+  @media (min-width:768px){ section{ padding-block:96px; } }
+  @media (min-width:1024px){ section{ padding-block:140px; } }
+
+  .kicker{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:var(--font-body); font-size:.72rem; font-weight:600;
+    letter-spacing:.22em; text-transform:uppercase; color:var(--accent);
+    margin-bottom:20px;
+  }
+  .kicker::before{ content:''; width:22px; height:1px; background:var(--accent); }
+
+  h1,h2,h3{ font-family:var(--font-display); font-weight:900; letter-spacing:-0.01em; }
+  h2{ font-size:clamp(1.9rem, 4.4vw, 3.4rem); line-height:1.05; max-width:16ch; }
+  h3{ font-size:clamp(1.15rem, 2vw, 1.5rem); font-weight:600; }
+  p{ color:var(--muted); font-size:clamp(1rem, 1.4vw, 1.125rem); }
+  .lede{ font-size:clamp(1.1rem,1.7vw,1.35rem); max-width:62ch; }
+
+  .hairline{ border-top:1px solid var(--hairline); }
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:fixed; top:0; left:0; right:0; z-index:1000;
+    height:84px; display:flex; align-items:center;
+    background:rgba(11,11,13,.7); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--hairline);
+  }
+  .nav-inner{ width:100%; display:flex; align-items:center; justify-content:space-between; }
+  .brand img{ height:30px; width:auto; background:none; }
+  nav.links{ display:none; align-items:center; gap:40px; }
+  nav.links a{ font-size:.86rem; text-transform:uppercase; letter-spacing:.08em; color:var(--text); position:relative; padding-bottom:4px; }
+  nav.links a::after{ content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--accent); transition:width .4s var(--ease); }
+  nav.links a:hover::after{ width:100%; }
+  @media (min-width:1024px){ nav.links{ display:flex; } }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    font-size:.82rem; text-transform:uppercase; letter-spacing:.08em;
+    padding:12px 26px; border:1px solid var(--accent); color:var(--accent);
+    transition:background .35s var(--ease), color .35s var(--ease), transform .35s var(--ease);
+    white-space:nowrap;
+  }
+  .btn:hover{ background:var(--accent); color:var(--bg); transform:translateY(-2px); }
+  .nav-cta{ display:none; }
+  @media (min-width:1024px){ .nav-cta{ display:inline-flex; } }
+
+  .burger{ width:44px; height:44px; position:relative; background:none; border:0; cursor:pointer; }
+  .burger span{ position:absolute; left:9px; right:9px; height:1.5px; background:var(--text); transition:transform .3s var(--ease), opacity .3s var(--ease); }
+  .burger span:nth-child(1){ top:13px; }
+  .burger span:nth-child(2){ top:21px; }
+  .burger span:nth-child(3){ top:29px; }
+  html.menu-open .burger span:nth-child(1){ transform:translateY(8px) rotate(45deg); }
+  html.menu-open .burger span:nth-child(2){ opacity:0; }
+  html.menu-open .burger span:nth-child(3){ transform:translateY(-8px) rotate(-45deg); }
+  @media (min-width:1024px){ .burger{ display:none; } }
+
+  .mobile-overlay{
+    position:fixed; inset:0; z-index:900; background:var(--bg);
+    display:flex; flex-direction:column; justify-content:center; padding-inline:32px;
+    transform:translateY(-100%); transition:transform .5s var(--ease);
+  }
+  html.menu-open .mobile-overlay{ transform:translateY(0); }
+  .mobile-overlay a{ font-family:var(--font-display); font-size:2.2rem; font-weight:600; padding:14px 0; border-bottom:1px solid var(--hairline); }
+  .mobile-overlay a.btn{
+    font-family:var(--font-body); font-size:.82rem; font-weight:400; text-transform:uppercase; letter-spacing:.08em;
+    padding:14px 26px; border-bottom:none; margin-top:32px; align-self:flex-start; width:auto;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:100svh; padding-top:84px;
+    display:grid; grid-template-columns:1fr; align-items:stretch;
+  }
+  @media (min-width:1024px){ .hero{ grid-template-columns:1.15fr .85fr; } }
+
+  .hero-copy{ display:flex; flex-direction:column; justify-content:center; padding:48px 24px; gap:28px; }
+  @media (min-width:768px){ .hero-copy{ padding:48px 40px; } }
+  @media (min-width:1024px){ .hero-copy{ padding:0 0 0 56px; } }
+
+  .hero-headline{
+    font-size:clamp(2.6rem, 7.2vw, 5.6rem); line-height:.98; text-transform:uppercase;
+  }
+  .hero-headline .word{ display:inline-block; will-change:transform; }
+  .hero-sub{ font-family:var(--font-body); font-style:italic; color:var(--muted); max-width:46ch; font-size:clamp(1.05rem,1.7vw,1.3rem); }
+
+  .scroll-cue{ display:flex; align-items:center; gap:10px; color:var(--muted); font-size:.78rem; text-transform:uppercase; letter-spacing:.12em; }
+  .scroll-cue svg{ animation:bob 1.8s ease-in-out infinite; }
+  @keyframes bob{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(6px);} }
+
+  .hero-visual{ position:relative; min-height:44vh; overflow:hidden; }
+  @media (min-width:1024px){ .hero-visual{ min-height:auto; } }
+  .hero-visual .hero-slide{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top center;
+    filter:grayscale(1) contrast(1.12) brightness(.85); transform:scale(1.08);
+    opacity:0; transition:opacity 1.6s var(--ease);
+  }
+  .hero-visual .hero-slide.is-active{ opacity:1; z-index:1; }
+  .hero-visual::after{
+    content:''; position:absolute; inset:0;
+    background:
+      linear-gradient(0deg, var(--bg) 0%, transparent 30%, transparent 70%, rgba(11,11,13,.5) 100%),
+      linear-gradient(90deg, var(--bg) 0%, transparent 18%);
+  }
+  @media (min-width:1024px){ .hero-visual::after{ background:linear-gradient(90deg, var(--bg) 0%, transparent 22%, transparent 100%), radial-gradient(ellipse at 70% 30%, rgba(232,35,43,.18), transparent 60%); } }
+
+  /* ---------- QUEM SOMOS ---------- */
+  .quem-somos .grid{ display:grid; grid-template-columns:1fr; gap:48px; align-items:start; }
+  @media (min-width:1024px){ .quem-somos .grid{ grid-template-columns:1.3fr .7fr; gap:96px; } }
+  .pillars{ display:flex; flex-direction:column; gap:0; }
+  .pillar{ padding-block:24px; border-top:1px solid var(--hairline); }
+  .pillar:last-child{ border-bottom:1px solid var(--hairline); }
+  .pillar-num{ font-family:var(--font-display); color:var(--accent); font-size:.85rem; margin-bottom:8px; display:block; }
+  .pillar h3{ margin-bottom:6px; }
+  .pillar p{ font-size:.95rem; }
+
+  /* ---------- NUMEROS ---------- */
+  .section-pinned{ background:var(--bg-elevated); }
+  .stats-grid{ display:grid; grid-template-columns:1fr; gap:20px; margin-top:56px; }
+  @media (min-width:640px){ .stats-grid{ grid-template-columns:repeat(2,1fr); gap:24px; } }
+  @media (min-width:1024px){ .stats-grid{ grid-template-columns:repeat(3,1fr); gap:28px; } }
+  .stat-card{
+    background:var(--bg); border:1px solid var(--hairline); padding:40px 32px;
+    transition:border-color .4s var(--ease), transform .4s var(--ease);
+  }
+  .stat-card:hover{ border-color:var(--accent); transform:translateY(-6px); }
+  @media (min-width:1024px){ .stat-card--feature{ grid-column:span 2; } }
+  .stat-card .stat-number{ font-family:var(--font-display); font-weight:900; font-size:clamp(2.6rem, 5vw, 4rem); color:var(--accent); line-height:1; margin-bottom:20px; }
+  .stat-card--feature .stat-number{ font-size:clamp(3.2rem, 7vw, 5.6rem); }
+  .stat-card .stat-desc{ font-size:1rem; color:var(--text); font-family:var(--font-body); font-style:italic; }
+  .stat-card--feature .stat-desc{ font-size:clamp(1.05rem,1.6vw,1.25rem); max-width:42ch; }
+
+  /* ---------- ELENCO ---------- */
+  .elenco-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:64px; }
+  @media (min-width:640px){ .elenco-grid{ grid-template-columns:repeat(3,1fr); gap:24px; } }
+  @media (min-width:1024px){ .elenco-grid{ grid-template-columns:repeat(5,1fr); gap:20px; } }
+
+  .artist-card{
+    position:relative; aspect-ratio:3/4; overflow:hidden; background:var(--surface);
+    display:block; width:100%; border:none; padding:0; margin:0; text-align:left;
+    font-family:inherit; cursor:pointer; -webkit-tap-highlight-color:transparent;
+  }
+  .artist-card img{ width:100%; height:100%; object-fit:cover; filter:grayscale(1) contrast(1.05); transition:filter .7s var(--ease), transform .7s var(--ease); }
+  .artist-card::after{
+    content:''; position:absolute; inset:0; pointer-events:none;
+    background:linear-gradient(180deg, transparent 35%, rgba(11,11,13,.92) 100%);
+  }
+  .artist-card:hover img, .artist-card:focus-visible img{ filter:grayscale(0) contrast(1.05); transform:scale(1.045); }
+  .artist-info{ position:absolute; left:0; right:0; bottom:0; padding:18px; z-index:2; transition:transform .5s var(--ease); display:block; }
+  .artist-card:hover .artist-info, .artist-card:focus-visible .artist-info{ transform:translateY(-4px); }
+  .artist-name{ font-family:var(--font-display); font-weight:600; font-size:1.02rem; text-transform:uppercase; letter-spacing:.01em; display:block; color:var(--text); }
+  .artist-role{ font-size:.78rem; color:var(--muted); margin-top:4px; display:block; }
+  .artist-stats{ font-size:.72rem; color:var(--accent); margin-top:8px; letter-spacing:.03em; display:block; }
+
+  /* ---------- ARTIST MODAL ---------- */
+  .artist-modal{
+    position:fixed; inset:0; z-index:1100; display:flex; align-items:center; justify-content:center;
+    padding:24px; visibility:hidden; opacity:0; transition:opacity .4s var(--ease), visibility 0s linear .4s;
+  }
+  .artist-modal.is-open{ visibility:visible; opacity:1; transition:opacity .4s var(--ease); }
+  .artist-modal-backdrop{ position:absolute; inset:0; background:rgba(6,6,7,.88); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); }
+  .artist-modal-panel{
+    position:relative; z-index:1; width:100%; max-width:760px; max-height:88vh; overflow-y:auto;
+    background:var(--bg-elevated); border:1px solid var(--hairline);
+    display:flex; flex-direction:column; transform:translateY(24px); transition:transform .4s var(--ease);
+  }
+  .artist-modal.is-open .artist-modal-panel{ transform:translateY(0); }
+  @media (min-width:700px){ .artist-modal-panel{ display:grid; grid-template-columns:280px 1fr; max-height:80vh; } }
+  .artist-modal-photo{ position:relative; aspect-ratio:3/4; overflow:hidden; background:var(--surface); flex-shrink:0; }
+  @media (min-width:700px){ .artist-modal-photo{ aspect-ratio:auto; height:100%; } }
+  .artist-modal-photo img{ width:100%; height:100%; object-fit:cover; }
+  .artist-modal-body{ padding:32px 28px 36px; }
+  @media (min-width:768px){ .artist-modal-body{ padding:48px 44px; } }
+  .artist-modal-role{ color:var(--accent); font-size:.78rem; text-transform:uppercase; letter-spacing:.1em; margin-bottom:10px; display:block; }
+  .artist-modal-body h3{ font-size:clamp(1.5rem,3vw,2.1rem); margin-bottom:18px; }
+  .artist-modal-body p{ font-size:.98rem; margin-bottom:20px; }
+  .artist-modal-stats{ font-size:.82rem; color:var(--text); border-top:1px solid var(--hairline); padding-top:16px; margin-bottom:20px; }
+  .artist-modal-ig{ display:inline-flex; align-items:center; gap:8px; font-size:.85rem; color:var(--text); border-bottom:1px solid var(--hairline); padding-bottom:2px; transition:color .3s var(--ease), border-color .3s var(--ease); }
+  .artist-modal-ig:hover{ color:var(--accent); border-color:var(--accent); }
+  .artist-modal-ig svg{ width:16px; height:16px; }
+  .artist-modal-close{
+    position:absolute; top:16px; right:16px; z-index:2; width:40px; height:40px;
+    display:flex; align-items:center; justify-content:center; background:rgba(11,11,13,.6); border:1px solid var(--hairline);
+    color:var(--text); cursor:pointer; transition:background .3s var(--ease), color .3s var(--ease);
+  }
+  .artist-modal-close:hover{ background:var(--accent); color:var(--bg); }
+  .artist-modal-close svg{ width:18px; height:18px; }
+
+  /* ---------- POR QUE HUMOR ---------- */
+  .humor-grid{ display:grid; grid-template-columns:1fr; gap:40px; }
+  @media (min-width:1024px){ .humor-grid{ grid-template-columns:1fr 1fr; gap:96px; } }
+  .quote{ font-family:var(--font-display); font-style:italic; font-weight:300; font-size:clamp(1.6rem,3.4vw,2.6rem); line-height:1.25; color:var(--text); }
+  .quote::before{ content:'“'; color:var(--accent); }
+  .quote::after{ content:'”'; color:var(--accent); }
+  .cite{ display:block; margin-top:24px; font-size:.78rem; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; }
+
+  /* ---------- ENTREGAS ---------- */
+  .entregas-grid{ display:grid; grid-template-columns:1fr; gap:24px; margin-top:56px; }
+  @media (min-width:768px){ .entregas-grid{ grid-template-columns:repeat(3,1fr); } }
+  .entrega-card{
+    background:var(--bg-elevated); border:1px solid var(--hairline); padding:48px 36px;
+    transition:border-color .4s var(--ease), transform .4s var(--ease);
+  }
+  .entrega-card:hover{ border-color:var(--accent); transform:translateY(-6px); }
+  .entrega-card svg{ color:var(--muted); width:26px; height:26px; margin-bottom:28px; }
+  .entrega-card h3{ margin-bottom:14px; }
+  .entrega-card p{ font-size:.95rem; }
+
+  /* ---------- CONTATO / FOOTER ---------- */
+  footer{ background:var(--bg-elevated); }
+  .footer-cta{ text-align:left; margin-bottom:80px; }
+  .footer-cta h2{ max-width:20ch; margin-bottom:32px; }
+  .footer-grid{ display:grid; grid-template-columns:1fr; gap:48px; padding-block:56px; border-top:1px solid var(--hairline); }
+  @media (min-width:768px){ .footer-grid{ grid-template-columns:1.4fr 1fr 1fr; } }
+  .footer-grid img{ height:28px; width:auto; background:none; margin-bottom:20px; }
+  .footer-grid p{ font-size:.92rem; max-width:32ch; }
+  .footer-col h4{ font-family:var(--font-body); font-size:.78rem; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin-bottom:18px; }
+  .footer-col a{ display:flex; align-items:center; gap:10px; font-size:.95rem; padding-block:8px; transition:color .3s var(--ease); }
+  .footer-col a:hover{ color:var(--accent); }
+  .footer-col svg{ width:17px; height:17px; color:var(--muted); flex-shrink:0; }
+  .footer-bottom{ display:flex; flex-direction:column; gap:12px; padding-block:28px; border-top:1px solid var(--hairline); font-size:.78rem; color:var(--muted); }
+  @media (min-width:768px){ .footer-bottom{ flex-direction:row; justify-content:space-between; } }
+
+  .reveal-item{ opacity:1; }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="brand"><img src="assets/logo-branco.png" alt="M.A Produções"></a>
+    <nav class="links">
+      <a href="#quem-somos">Quem somos</a>
+      <a href="#elenco">Elenco</a>
+      <a href="#como-funciona">Atuação</a>
+      <a href="blog/">Blog</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a href="mailto:comercial@maprod.com.br" class="btn nav-cta">Fale com a gente</a>
+    <button class="burger" id="burgerBtn" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-overlay" id="mobileOverlay">
+  <a href="#quem-somos">Quem somos</a>
+  <a href="#elenco">Elenco</a>
+  <a href="#como-funciona">Atuação</a>
+  <a href="blog/">Blog</a>
+  <a href="#contato">Contato</a>
+  <a href="mailto:comercial@maprod.com.br" class="btn">Fale com a gente</a>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" style="padding-block:0;">
+    <div class="hero-copy">
+      <span class="kicker">M.A Produções</span>
+      <h1 class="hero-headline">O maior ecossistema de comédia do Brasil.</h1>
+      <p class="hero-sub">Produzimos, agenciamos e impulsionamos os maiores nomes do stand-up comedy do Brasil — do palco aos maiores teatros do país, das redes sociais ao streaming.</p>
+      <div class="scroll-cue">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg>
+        Role para conhecer
+      </div>
+    </div>
+    <div class="hero-visual parallax-bg">
+      <img class="hero-slide is-active" src="assets/artistas/fabio-rabin.jpg" alt="Fábio Rabin, comediante do elenco M.A Produções, no palco">
+      <img class="hero-slide" src="assets/artistas/marcio-donato.png" alt="Márcio Donato, comediante do elenco M.A Produções">
+      <img class="hero-slide" src="assets/artistas/4-amigos.jpg" alt="4 Amigos, grupo de stand-up comedy do elenco M.A Produções">
+      <img class="hero-slide" src="assets/artistas/maloka.png" alt="Maloka, comediante do elenco M.A Produções">
+      <img class="hero-slide" src="assets/artistas/matheus-ceara.png" alt="Matheus Ceará, comediante do elenco M.A Produções">
+      <img class="hero-slide" src="assets/artistas/robson-nunes.jpg" alt="Robson Nunes, comediante do elenco M.A Produções">
+    </div>
+  </section>
+
+  <!-- QUEM SOMOS -->
+  <section class="quem-somos" id="quem-somos">
+    <div class="container">
+      <div class="grid">
+        <div>
+          <span class="kicker">Quem somos</span>
+          <h2 style="max-width:20ch; margin-bottom:32px;">Transformamos humor em relevância cultural para o Brasil inteiro.</h2>
+          <p class="lede">A M.A Produções é uma empresa especializada na produção e promoção de talentos do stand-up comedy, unindo humor e oportunidades em um ambiente dedicado inteiramente à comédia. Trabalhamos com os melhores comediantes do Brasil — nomes que se destacam pela originalidade, pela comédia observacional e pela capacidade rara de criar conexão genuína com o público. Cuidamos de turnês, shows e gestão de carreira dos nossos artistas, do palco às plataformas digitais, construindo as carreiras que hoje lideram o humor brasileiro.</p>
+        </div>
+        <div class="pillars">
+          <div class="pillar">
+            <span class="pillar-num">01</span>
+            <h3>Produção 360º</h3>
+            <p>Turnês, shows e eventos, do roteiro à execução no palco.</p>
+          </div>
+          <div class="pillar">
+            <span class="pillar-num">02</span>
+            <h3>Agenciamento de carreira</h3>
+            <p>Gestão completa dos maiores nomes da comédia nacional.</p>
+          </div>
+          <div class="pillar">
+            <span class="pillar-num">03</span>
+            <h3>Curadoria por dados</h3>
+            <p>O artista certo para o público certo, com match orientado por dados de audiência.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUMEROS -->
+  <section class="section-pinned" id="numeros">
+    <div class="container">
+      <span class="kicker">Números que importam</span>
+      <div class="stats-grid">
+        <div class="stat-card stat-card--feature">
+          <div class="stat-number">+50M</div>
+          <div class="stat-desc">é a base somada de seguidores do nosso elenco nas redes sociais — alcance multiplataforma do humor no Brasil.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">10</div>
+          <div class="stat-desc">comediantes e projetos sob gestão da M.A Produções — entre eles, alguns dos nomes mais assistidos e ouvidos do Brasil.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">78%</div>
+          <div class="stat-desc">dos brasileiros consomem filmes e séries de comédia. O humor deixou de ser nicho: é o gênero que domina a atenção do país.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">+65%</div>
+          <div class="stat-desc">de toda a ocupação dos teatros brasileiros hoje é de sessões de stand-up comedy — um movimento que redesenhou o entretenimento ao vivo.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">+80%</div>
+          <div class="stat-desc">dos brasileiros foram pela primeira vez ao teatro para assistir stand-up comedy — um público que o teatro tradicional nunca tinha alcançado.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ELENCO -->
+  <section id="elenco">
+    <div class="container">
+      <span class="kicker">Elenco</span>
+      <h2 style="max-width:22ch;">Os nomes que fazem o Brasil parar para rir.</h2>
+      <p class="lede" style="margin-top:24px;">Nosso casting reúne os comediantes mais relevantes e assistidos do país — de pioneiros do stand-up a novas vozes que já lotam teatros e streamings. Cada artista carrega uma linguagem própria e uma audiência fiel, o que nos permite uma curadoria precisa: encontrar o comediante certo para o público certo, em qualquer formato de campanha ou evento.</p>
+
+      <div class="elenco-grid">
+        <button type="button" class="artist-card"
+          data-name="Fábio Rabin" data-role="Pioneiro do stand-up no Brasil" data-stats="1,1M seguidores no Instagram · Prime Video"
+          data-bio="Ator e comediante, pioneiro do stand-up no Brasil. Lançou especiais como Sem Noção e Queimando o Filme, e hoje roda o Brasil e o mundo com o show Ladeira Abaixo, levando seu humor ácido e provocador a diversos públicos."
+          data-img="assets/artistas/fabio-rabin.jpg" data-ig="https://www.instagram.com/fabiorabin/">
+          <img src="assets/artistas/fabio-rabin.jpg" alt="Fábio Rabin" loading="lazy">
+          <span class="artist-info"><span class="artist-name">Fábio Rabin</span><span class="artist-role">Pioneiro do stand-up no Brasil</span><span class="artist-stats">1,1M IG · Prime Video</span></span>
+        </button>
+        <button type="button" class="artist-card"
+          data-name="Iris Madjarof" data-role="Especial na Disney+, humor e maternidade" data-stats="957 mil seguidores no Instagram · +190M views por mês"
+          data-bio="Grande presença digital, unindo humor, autenticidade e maternidade. Lançou especial na Disney+ e hoje compartilha a rotina de mãe com bom humor, sendo fanática por futebol e pets."
+          data-img="assets/artistas/iris-madjarof.png" data-ig="https://www.instagram.com/irismadjarof/">
+          <img src="assets/artistas/iris-madjarof.png" alt="Iris Madjarof" loading="lazy">
+          <span class="artist-info"><span class="artist-name">Iris Madjarof</span><span class="artist-role">Especial na Disney+, humor e maternidade</span><span class="artist-stats">957K IG · +190M views/mês</span></span>
+        </button>
+        <button type="button" class="artist-card"
+          data-name="Maloka" data-role="Paródias musicais e alto engajamento" data-stats="6,9M no Facebook · 1,5M no TikTok"
+          data-bio="De origem humilde, conquistou o público com paródias musicais de sucesso nas redes, com parcerias ao lado de Luan Santana e Whindersson Nunes. Hoje arrasta multidões com alto engajamento no Instagram e Facebook."
+          data-img="assets/artistas/maloka.png" data-ig="https://www.instagram.com/malokaoficial/">
+          <img src="assets/artistas/maloka.png" alt="Maloka" loading="lazy">
+          <span class="artist-info"><span class="artist-name">Maloka</span><span class="artist-role">Paródias musicais e alto engajamento</span><span class="artist-stats">6,9M FB · TikTok 1,5M</span></span>
+        </button>
+        <button type="button" class="artist-card"
+          data-name="Matheus Ceará" data-role="Ator, redator e fixo na Praça É Nossa" data-stats="6,7M seguidores no Instagram · Netflix e Star+"
+          data-bio="Humorista, ator e redator. Ganhou destaque ao vencer o quadro &quot;Quem Chega Lá&quot; no Domingão do Faustão e integrar o elenco de A Praça É Nossa. Hoje é referência no stand-up, com turnês nacionais, especiais em streaming e filme na Netflix."
+          data-img="assets/artistas/matheus-ceara.png" data-ig="https://www.instagram.com/matheusceara/">
+          <img src="assets/artistas/matheus-ceara.png" alt="Matheus Ceará" loading="lazy">
+          <span class="artist-info"><span class="artist-name">Matheus Ceará</span><span class="artist-role">Ator, redator e fixo na Praça É Nossa</span><span class="artist-stats">6,7M IG · Netflix e Star+</span></span>
+        </button>
+        <button type="button" class="artist-card"
+          data-name="Dihh Lopes" data-role="Fundador do maior grupo de stand-up do país" data-stats="1M seguidores no Instagram · +145M views"
+          data-bio="Fundador do maior grupo de stand-up comedy do Brasil, o 4 Amigos. Conhecido pelo humor ácido e sagaz, que aborda temas tabus com inteligência e crítica. Hoje também assina o projeto Série B ao lado de Márcio Donato."
+          data-img="assets/artistas/dihh-lopes.jpg" data-ig="https://www.instagram.com/odihhlopes/">
+          <img src="assets/artistas/dihh-lopes.jpg" alt="Dihh Lopes" loading="lazy">
+          <span class="artist-info"><span class="artist-name">Dihh Lopes</span><span class="artist-role">Fundador do maior grupo de stand-up do país</span><span class="artist-stats">1M IG · +145M views</span></span>
+        </button>
+        <button type="button" class="artist-card"
+          data-name="Márcio Donato" data-role="Observações do cotidiano, conexão genuína" data-stats="1,5M seguidores no Instagram · Novo especial"
+          data-bio="Com observações sobre as pequenas coisas da vida, conecta-se genuinamente com o público. Usa suas próprias experiências para criar histórias engraçadas e cheias de sinceridade. Também assina o projeto Série B ao lado de Dihh Lopes."
+          data-img="assets/artistas/marcio-donato.png" data-ig="https://www.instagram.com/omarciodonato/">
+          <img src="assets/artistas/marcio-donato.png" alt="Márcio Donato" loading="lazy">
+          <span class="artist-info"><span class="artist-name">Márcio Donato</span><span class="artist-role">Observações do cotidiano, conexão genuína</span><span class="artist-stats">1,5M IG · Novo especial</span></span>
+        </button>
+        <button type="button" class="artist-card"
+          data-name="4 Amigos" data-role="O maior grupo de stand-up do Brasil" data-stats="2,6M seguidores no Instagram · +10 anos em turnê"
+          data-bio="O maior grupo de stand-up comedy do Brasil, com mais de 10 anos em turnê e recorde de público nos teatros das principais capitais do país. Shows ao vivo cheios de interação e humor diversificado."
+          data-img="assets/artistas/4-amigos.jpg" data-ig="https://www.instagram.com/os4amigos/">
+          <img src="assets/artistas/4-amigos.jpg" alt="4 Amigos" loading="lazy">
+          <span class="artist-info"><span class="artist-name">4 Amigos</span><span class="artist-role">O maior grupo de stand-up do Brasil</span><span class="artist-stats">2,6M IG · +10 anos em turnê</span></span>
+        </button>
+        <button type="button" class="artist-card"
+          data-name="Marcelo Marrom" data-role="Músico, comediante e palestrante" data-stats="299 mil seguidores no Instagram · SBT e Altas Horas"
+          data-bio="Músico, comediante e palestrante, conhecido por unir humor e música em apresentações que já passaram por programas como Altas Horas, Jô e SBT. Leva ao palco o bordão &quot;não durma antes de sonhar&quot;."
+          data-img="assets/artistas/marcelo-marrom.jpg" data-ig="https://www.instagram.com/marcelomarrom/">
+          <img src="assets/artistas/marcelo-marrom.jpg" alt="Marcelo Marrom" loading="lazy">
+          <span class="artist-info"><span class="artist-name">Marcelo Marrom</span><span class="artist-role">Músico, comediante e palestrante</span><span class="artist-stats">299K IG · SBT e Altas Horas</span></span>
+        </button>
+        <button type="button" class="artist-card"
+          data-name="Série B 4A" data-role="Projeto de stand-up de Dihh Lopes e Márcio Donato" data-stats="55 mil seguidores no Instagram"
+          data-bio="Projeto de stand-up comedy assinado por Dihh Lopes e Márcio Donato, com agenda de shows por diversas cidades do país e humor popular, direto e sem filtro."
+          data-img="assets/artistas/serie-b-4a.jpg" data-ig="https://www.instagram.com/aserieb4a/">
+          <img src="assets/artistas/serie-b-4a.jpg" alt="Série B 4A" loading="lazy">
+          <span class="artist-info"><span class="artist-name">Série B 4A</span><span class="artist-role">Dihh Lopes &amp; Márcio Donato</span><span class="artist-stats">55K IG</span></span>
+        </button>
+        <button type="button" class="artist-card"
+          data-name="Robson Nunes" data-role="Ator, apresentador e humorista" data-stats="160 mil seguidores no Instagram"
+          data-bio="Ator, apresentador, cantor, dublador e humorista. Leva aos palcos espetáculos que misturam stand-up com personagens, com apresentações em casas como o Porão Comedy Club e festivais como o ArraShow."
+          data-img="assets/artistas/robson-nunes.jpg" data-ig="https://www.instagram.com/robsonnunesoficial/">
+          <img src="assets/artistas/robson-nunes.jpg" alt="Robson Nunes" loading="lazy">
+          <span class="artist-info"><span class="artist-name">Robson Nunes</span><span class="artist-role">Ator, apresentador e humorista</span><span class="artist-stats">160K IG</span></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUE HUMOR -->
+  <section style="background:var(--bg-elevated);">
+    <div class="container">
+      <span class="kicker">Impacto cultural</span>
+      <div class="humor-grid">
+        <div>
+          <p class="quote">O stand-up devolveu o teatro ao povo brasileiro.</p>
+          <span class="cite">— M.A Produções</span>
+        </div>
+        <div>
+          <p class="lede">Por muito tempo, ir ao teatro no Brasil foi hábito de poucos. Hoje, a maioria das casas do país abre as portas por causa do volume de sessões de stand-up comedy — e todos os recordes de bilheteria do teatro brasileiro pertencem aos comediantes.</p>
+          <p style="margin-top:20px;">A M.A Produções está no centro desse movimento, à frente de turnês, especiais e carreiras que lideram essa virada cultural — levando o humor brasileiro do palco ao streaming, das redes sociais aos maiores teatros do país.</p>
+          <span class="cite" style="margin-top:20px;">Dados: Léo Hibou &amp; Wee Digital, 2025</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O QUE ENTREGAMOS -->
+  <section id="como-funciona">
+    <div class="container">
+      <span class="kicker">Frentes de atuação</span>
+      <h2 style="max-width:20ch;">Como a M.A Produções move o mercado da comédia.</h2>
+      <div class="entregas-grid">
+        <div class="entrega-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="4" width="18" height="18" rx="1"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <h3>Produção de Turnês e Shows</h3>
+          <p>Estruturamos e viabilizamos turnês nacionais dos nossos artistas, dos teatros aos grandes eventos, do roteiro à execução no palco.</p>
+        </div>
+        <div class="entrega-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 010 7"/></svg>
+          <h3>Conteúdo e Presença Digital</h3>
+          <p>Produzimos conteúdo original que mantém nosso elenco entre os nomes mais assistidos do país, das redes sociais ao streaming.</p>
+        </div>
+        <div class="entrega-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          <h3>Parcerias Estratégicas</h3>
+          <p>Conectamos marcas ao maior ecossistema de comédia do Brasil através de patrocínios, ativações e embaixadores.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contato">
+  <div class="container" style="padding-top:60px;">
+    <div class="footer-cta">
+      <span class="kicker">Contato</span>
+      <h2>Humor que move o Brasil.</h2>
+      <p class="lede" style="margin-bottom:32px;">Para imprensa, parcerias ou para conhecer melhor o trabalho da M.A Produções, fale com a gente.</p>
+      <a href="mailto:comercial@maprod.com.br" class="btn">Fale com a gente</a>
+    </div>
+
+    <div class="footer-grid">
+      <div class="footer-col">
+        <img src="assets/logo-branco.png" alt="M.A Produções">
+        <p>O maior ecossistema de comédia do Brasil — produção, agenciamento e gestão de carreira dos comediantes que fazem o país inteiro rir.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <a href="#quem-somos">Quem somos</a>
+        <a href="#elenco">Elenco</a>
+        <a href="#como-funciona">Atuação</a>
+        <a href="blog/">Blog</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <a href="mailto:comercial@maprod.com.br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>comercial@maprod.com.br</a>
+        <a href="tel:+5511945512381"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>11 94551-2381</a>
+        <a href="https://instagram.com/m.aprod" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@m.aprod</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>M.A Produções © 2026 — Todos os direitos reservados.</span>
+      <span>Desenvolvido pela V4 Company Alves &amp; Co.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="artist-modal" id="artistModal" role="dialog" aria-modal="true" aria-labelledby="artistModalName" hidden>
+  <div class="artist-modal-backdrop" data-modal-close></div>
+  <div class="artist-modal-panel">
+    <button type="button" class="artist-modal-close" data-modal-close aria-label="Fechar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="artist-modal-photo">
+      <img id="artistModalImg" src="" alt="">
+    </div>
+    <div class="artist-modal-body">
+      <span class="artist-modal-role" id="artistModalRole"></span>
+      <h3 id="artistModalName"></h3>
+      <p id="artistModalBio"></p>
+      <div class="artist-modal-stats" id="artistModalStats"></div>
+      <a id="artistModalIg" href="#" target="_blank" rel="noopener" class="artist-modal-ig">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        Ver no Instagram
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const isMobile = window.matchMedia('(max-width: 768px)').matches || 'ontouchstart' in window;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* mobile menu */
+  const burgerBtn = document.getElementById('burgerBtn');
+  const closeMenu = () => document.documentElement.classList.remove('menu-open');
+  burgerBtn?.addEventListener('click', () => document.documentElement.classList.toggle('menu-open'));
+  document.querySelectorAll('.mobile-overlay a').forEach(a => a.addEventListener('click', closeMenu));
+
+  /* artist modal */
+  const artistModal = document.getElementById('artistModal');
+  const modalImg = document.getElementById('artistModalImg');
+  const modalRole = document.getElementById('artistModalRole');
+  const modalName = document.getElementById('artistModalName');
+  const modalBio = document.getElementById('artistModalBio');
+  const modalStats = document.getElementById('artistModalStats');
+  const modalIg = document.getElementById('artistModalIg');
+  let lastFocusedCard = null;
+
+  function openArtistModal(card) {
+    lastFocusedCard = card;
+    modalImg.src = card.dataset.img;
+    modalImg.alt = card.dataset.name;
+    modalRole.textContent = card.dataset.role;
+    modalName.textContent = card.dataset.name;
+    modalBio.textContent = card.dataset.bio;
+    modalStats.textContent = card.dataset.stats;
+    modalIg.href = card.dataset.ig;
+    artistModal.hidden = false;
+    requestAnimationFrame(() => artistModal.classList.add('is-open'));
+    document.documentElement.style.overflow = 'hidden';
+    const closeBtn = artistModal.querySelector('.artist-modal-close');
+    closeBtn?.focus();
+  }
+
+  function closeArtistModal() {
+    artistModal.classList.remove('is-open');
+    document.documentElement.style.overflow = '';
+    setTimeout(() => { artistModal.hidden = true; }, 400);
+    lastFocusedCard?.focus();
+  }
+
+  document.querySelectorAll('.artist-card').forEach(card => {
+    card.addEventListener('click', () => openArtistModal(card));
+  });
+  artistModal.querySelectorAll('[data-modal-close]').forEach(el => el.addEventListener('click', closeArtistModal));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && artistModal.classList.contains('is-open')) closeArtistModal();
+  });
+
+  /* GSAP + ScrollTrigger */
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+
+  /* Lenis smooth scroll (desktop only) */
+  let lenisInstance = null;
+  if (typeof Lenis !== 'undefined' && !isMobile && !prefersReducedMotion) {
+    try {
+      lenisInstance = new Lenis({
+        duration: 1.15,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+        syncTouch: false,
+      });
+      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        lenisInstance.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => { lenisInstance.raf(time * 1000); });
+        gsap.ticker.lagSmoothing(0);
+      }
+    } catch (e) { lenisInstance = null; }
+  }
+
+  /* anchor smooth scroll */
+  document.querySelectorAll('a[href^="#"]:not(#artistModalIg)').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const id = link.getAttribute('href');
+      if (!id || id === '#' || id.length < 2) return;
+      const target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      closeMenu();
+      if (lenisInstance) lenisInstance.scrollTo(target, { offset: -70 });
+      else target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  /* SplitType hero headline */
+  if (typeof SplitType !== 'undefined' && typeof gsap !== 'undefined' && !prefersReducedMotion) {
+    try {
+      const heroSplit = new SplitType('.hero-headline', { types: 'words' });
+      gsap.from(heroSplit.words, {
+        opacity: 0, y: 30, duration: 1.1, stagger: 0.07,
+        ease: 'cubic-bezier(0.22,1,0.36,1)', delay: 0.2
+      });
+    } catch (e) {}
+  }
+  if (typeof gsap !== 'undefined' && !prefersReducedMotion) {
+    gsap.from('.hero-sub, .hero .scroll-cue', { opacity: 0, y: 20, duration: 1, delay: 0.9, stagger: 0.15 });
+    gsap.from('.hero-visual img', { scale: 1.18, duration: 1.6, ease: 'cubic-bezier(0.22,1,0.36,1)' });
+  }
+
+  /* staggered reveal per section */
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && !prefersReducedMotion) {
+    document.querySelectorAll('main section, footer').forEach(section => {
+      const items = section.querySelectorAll('.kicker, h2, .lede, p, .pillar, .stat-card, .artist-card, .entrega-card, .footer-col, .footer-cta > *');
+      if (!items.length) return;
+      gsap.from(items, {
+        opacity: 0, y: 36, duration: 0.8, stagger: 0.06,
+        ease: 'cubic-bezier(0.22,1,0.36,1)',
+        scrollTrigger: { trigger: section, start: 'top 80%', toggleActions: 'play none none none' }
+      });
+    });
+
+    document.querySelectorAll('.section-headline').forEach(el => {
+      if (typeof SplitType === 'undefined') return;
+      const split = new SplitType(el, { types: 'words' });
+      gsap.from(split.words, {
+        opacity: 0, y: 24, duration: 0.7, stagger: 0.05,
+        scrollTrigger: { trigger: el, start: 'top 85%' }
+      });
+    });
+  }
+
+  /* parallax on hero image */
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && !isMobile && !prefersReducedMotion) {
+    gsap.utils.toArray('.parallax-bg').forEach(el => {
+      gsap.to(el.querySelectorAll('.hero-slide'), {
+        yPercent: 12, ease: 'none',
+        scrollTrigger: { trigger: el, start: 'top top', end: 'bottom top', scrub: true }
+      });
+    });
+  }
+
+  /* hero photo carousel */
+  (function heroCarousel(){
+    const slides = document.querySelectorAll('.hero-slide');
+    if (slides.length < 2 || prefersReducedMotion) return;
+    let current = 0;
+    setInterval(() => {
+      slides[current].classList.remove('is-active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('is-active');
+    }, 5000);
+  })();
+
+</script>
+</body>
+</html>
